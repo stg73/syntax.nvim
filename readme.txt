@@ -33,7 +33,7 @@ skk-specialized
     "b:skk_bunnrui"に候補の分類を代入する これにモジュール"skk_commands"の関数"annotate"を組み合わせると 分類注釈の追加が楽にできる
 
     luaのモジュール"skk"が必要
-    モジュールの場所は"https://github.com/stg73/lua-modules"
+    モジュールの場所は"https://github.com/stg73/modules.nvim"
 
 url
     URL
