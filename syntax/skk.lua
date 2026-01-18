@@ -17,8 +17,8 @@ syntax match kouho_skk '\v\/@<=[^/]+' contains=annotation_kouho_skk,numberFormat
         syntax match symbol_lisp_kouho_skk '\v\'\a+' contained
 
 syntax match invalidExpression_skk '\v^(\S+ \/.+\/$)@!.+'
-syntax match tooManySemicolons_kouho_skk '\v([^/]*;){2}[^/]+' contained containedin=kouho_skk
-syntax match allowedOnlyInUserdict_kouho_skk '\v\/@<=\[.\/.{-}\/]\/@=' contained containedin=kouho_skk
+syntax match tooManySemicolons_kouho_skk '\v(\/.{-})@<=(;[^/]*){2,}\/@=' contained containedin=kouho_skk
+syntax match allowedOnlyInUserdict_kouho_skk '\v\/@<=\[.\/.{-}\/]\/' contained containedin=kouho_skk
 syntax match unnecessaryOkuri_kouho_skk '\v(^[あ-んー]+\l .*\/[^/;]+)@<=[あ-ん][/;]@=' contained containedin=kouho_skk
 
 syntax match comment_skk '\v^;.+' contained containedin=invalidExpression_skk
