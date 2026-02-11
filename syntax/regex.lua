@@ -16,7 +16,7 @@ syntax match characterClasses_regex '\v(\\_)?\[([^\\\]]|\\.)+\]' contains=litera
         syntax match hanni_characterClasses_regex '\v.-[^\]]' contained
         syntax match delimiter_hanni_characterClasses_regex '\v.@<=-.@=' contained containedin=hanni_characterClasses_regex
         syntax match negation_characterClasses_regex '\v\[@<=\^' contained
-syntax match extuicmdline_regex '\v^[/?]'
+syntax match ui2cmdline_regex '\v^[/?]'
 ]=])
 
 -- very nomagicのハイライト
@@ -44,4 +44,4 @@ vim.api.nvim_set_hl(0,"malti_regex",{link = "number"})
 vim.api.nvim_set_hl(0,"patternAtom_regex",{link = "special"})
 vim.api.nvim_set_hl(0,"delimiter_regex",{link = "@punctuation.delimiter"})
 vim.api.nvim_set_hl(0,"matomeru_regex",{link = "@punctuation.bracket"})
-vim.api.nvim_set_hl(0,"extuicmdline_regex",{link = "@punctuation.delimiter"})
+vim.api.nvim_set_hl(0,"ui2cmdline_regex",{link = "@punctuation.delimiter"})

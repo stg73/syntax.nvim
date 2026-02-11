@@ -22,11 +22,11 @@ regex
         end,
     })
 
-    extuiならコマンドラインにも適用できる:
+    ui2ならコマンドラインにも適用できる:
     vim.api.nvim_create_autocmd("CmdLineEnter",{
         pattern = {"/","?"},
         callback = function()
-            local cmdline = require("vim._extui.shared").bufs.cmd
+            local cmdline = require("vim._core.ui2").bufs.cmd
             if string.match(vim.fn.getcmdtype(),"[/?]") then
                 vim.bo[cmdline].syntax = "regex"
             end
@@ -36,7 +36,7 @@ regex
         group = group,
         pattern = {"/","?"},
         callback = function()
-            local cmdline = require("vim._extui.shared").bufs.cmd
+            local cmdline = require("vim._core.ui2").bufs.cmd
             vim.bo[cmdline].syntax = ""
         end,
     })
