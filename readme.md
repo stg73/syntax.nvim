@@ -1,10 +1,10 @@
 ## 概要
 
-neovim用の `:syntax` コマンドを使ったシンタクスハイライト
+neovim用の `:syntax` コマンドを使ったシンタクスハイライト。
 
 ## 使い方
 
-このディレクトリを `runtimepath` に追加する
+このディレクトリを `runtimepath` に追加する。
 
 ## それぞれのシンタクスハイライトの説明
 
@@ -15,7 +15,8 @@ neovim用の `:syntax` コマンドを使ったシンタクスハイライト
 - regex
 
   vimの正規表現
-  `very magic` もしくは `very nomagic` のみ正しくハイライトできる
+
+  `very magic` もしくは `very nomagic` のみ正しくハイライトできる。
 
   使用例:
   ```lua
@@ -53,21 +54,24 @@ neovim用の `:syntax` コマンドを使ったシンタクスハイライト
 - skk
 
   ユーザ辞書以外のSKK辞書
-  lispに対応
+
+  lispに対応。
 
 - skk-users
 
   SKKのユーザ辞書
-  ユーザ辞書にしかない `[う/使/遣/]` のようなものに対応
+
+  ユーザ辞書にしかない `[う/使/遣/]` のようなものに対応。
 
 - skk-specialized
 
   特定分野に関するSKK辞書
 
-  候補の分類を取得し それが含まれない候補をエラーにする
-  `b:skk_bunnrui` に候補の分類を代入する これにモジュール `skk` の関数 `command.annotate` を組み合わせると 分類注釈の追加が楽にできる
+  候補の分類を取得し、それが含まれない候補をエラーにする。
 
-  luaのモジュール `skk` が必要
+  `b:skk_bunnrui` に候補の分類を代入する。これにモジュール `skk` の関数 `command.annotate` を組み合わせると、分類注釈の追加が楽にできる
+
+  luaのモジュール `skk` が必要。
   モジュールの場所: https://github.com/stg73/modules.nvim
 
 - url
