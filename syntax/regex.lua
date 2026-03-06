@@ -5,12 +5,12 @@ syntax match ignored_regex '\v\/'
 syntax match number_regex '\v\d' contained
 syntax match escape_regex '\v\\.'
 syntax match flag_regex '\v\\([cCZmMvV]|\%\#\=\d)'
-syntax match characterClasses_regex '\v\\_?[iIkKfFpPsSdDxXoOwWhHaAlLuU]'
+syntax match characterClasses_regex '\v\\_?[iIkKfFpPsSdDxXoOwWhHaAlLuU]|\~'
 syntax match malti_regex '\v[*+?=]|\{.{-}\}|\@[><]|\@[><]?[!=]' contains=number_regex,delimiter_malti_regex
     syntax match delimiter_malti_regex ','
 syntax match patternAtom_regex "\v(\\_)?[$^.]|[><]|\\z[se]|\%[<>]?([$^V#]|'\l|(\.|\d)+[lcv])" contains=number_regex
 syntax match delimiter_regex '\v[&|]'
-syntax match matomeru_regex '\v[)(]'
+syntax match matomeru_regex '\v\%?[)(]'
 syntax match characterClasses_regex '\v(\\_)?\[([^\\\]]|\\.)+\]' contains=literal_characterClasses_regex
     syntax match literal_characterClasses_regex '\v\[@<=.{-}\]@=' contained contains=hanni_characterClasses_regex,negation_characterClasses_regex,escape_regex
         syntax match hanni_characterClasses_regex '\v.-[^\]]' contained
@@ -25,8 +25,8 @@ syntax match Vregex '\v\\V.+' contains=ALLBUT,malti_regex,patternAtom_regex,deli
 syntax match malti_regex '\v\\([*+?=]|\{.{-}\}|\@[><]?[!=]?)' contained containedin=Vregex contains=number_regex,delimiter_malti_regex
 syntax match patternAtom_regex "\v\\_?([$^.]|[><]|\%[<>]?([$^V#]|'\l|(\.|\d)+[lcv]))|\\z[se]" contained containedin=Vregex contains=number_regex
 syntax match delimiter_regex '\v\\[&|]' contained containedin=Vregex
-syntax match matomeru_regex '\v\\[)(]' contained containedin=Vregex
-syntax match characterClasses_regex '\v\\_?\[.+\]' contained containedin=Vregex contains=literal_characterClasses_regex
+syntax match matomeru_regex '\v\\\%?[)(]' contained containedin=Vregex
+syntax match characterClasses_regex '\v\\_?\[.+\]|\\\~' contained containedin=Vregex contains=literal_characterClasses_regex
 ]])
 
 vim.api.nvim_set_hl(0,"literal_regex",{link = "string"})
