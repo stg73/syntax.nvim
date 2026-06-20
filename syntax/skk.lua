@@ -1,7 +1,7 @@
 vim.cmd([[
 syntax match delimiter_skk '\/'
 syntax match midasi_skk '\v^\S+ @=' contains=okuri_midasi_skk,anyNumber_midasi_skk
-    syntax match okuri_midasi_skk '\v(^[ぁ-んー]+)@<=\l' contained
+    syntax match okuri_midasi_skk '\v(^[ぁ-んー]+)@<=\l @=' contained
     syntax match anyNumber_midasi_skk '#' contained
 syntax match kouho_skk '\v\/@<=[^/]+' contains=annotation_kouho_skk,numberFormat_kouho_skk,lisp_kouho_skk
     syntax match annotation_kouho_skk '\v;[^/]+' contained contains=lisp_kouho_skk
